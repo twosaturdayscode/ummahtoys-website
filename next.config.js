@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['ummahtoys.it'],
+    domains: ['wordpress.ummahtoys.it'],
   },
 }
 
