@@ -10,8 +10,8 @@ import QuantitySelect from "../../src/components/QuantitySelect";
 
 export default function ProductPage(product) {
   const { addItemToCart } = useCartContext();
+  const [currentImage, setCurrentImage] = useState(product?.images[0]);
 
-  const [currentImage, setCurrentImage] = useState(product.images[0]);
   const [quantity, setQuantity] = useState(1);
 
   function handleAddToCart() {
@@ -107,12 +107,13 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: true,
+    fallback: false,
   };
 }
 
 export async function getStaticProps(props) {
   const product = await getWooProductBySlug(props.params.slug);
+  console.log(`Building slug: ${props.params.slug}`);
   // When products are fetched by slug woocommerce always returns an array with one element
   return { props: product[0] };
 }
