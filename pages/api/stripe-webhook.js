@@ -1,7 +1,9 @@
 import Stripe from "stripe";
 import { updateWooOrder } from "../../src/api";
 
-const stripe = new Stripe(process.env.STRIPE_SK);
+const stripe = new Stripe(process.env.STRIPE_SK, {
+  apiVersion: "2020-08-27",
+});
 const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET;
 
 export default async function stripeWebhook(req, res) {
