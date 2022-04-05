@@ -6,6 +6,13 @@ const stripe = new Stripe(process.env.STRIPE_SK, {
 });
 const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET;
 
+// NOTE: See https://www.codedaily.io/tutorials/Stripe-Webhook-Verification-with-NextJS
+export const config = {
+  api: {
+    bodyParser: false,
+  },
+};
+
 export default async function stripeWebhook(req, res) {
   if (req.method === "POST") {
     const sig = req.headers["stripe-signature"];
