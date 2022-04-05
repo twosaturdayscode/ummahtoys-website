@@ -74,6 +74,10 @@ export const prepareWooOrder = (cart, userData) => {
   const order = {
     payment_method:
       userData.shippingMethod === "ritiro" ? "bacs" : userData.paymentMethod,
+    status:
+      userData.shippingMethod === "ritiro" || userData.paymentMethod === "cod"
+        ? "on-hold"
+        : "pending",
     set_paid: false,
     billing: shippingInfo,
     shipping: shippingInfo,
