@@ -18,7 +18,7 @@ export default async function stripeWebhook(req, res) {
         endpointSecret
       );
     } catch (error) {
-      response.status(400).send(`Webhook Error: ${err.message}`);
+      res.status(400).send(`Webhook Error: ${err.message}`);
     }
 
     if ("checkout.session.completed" === stripeEvent.type) {
