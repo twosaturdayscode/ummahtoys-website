@@ -41,7 +41,8 @@ export default async function stripeWebhook(req, res) {
         await updateWooOrder(session.metadata.orderId, { status: "failed" });
         console.error("Update order error", error);
       }
-      res.status(200).send();
+      
+      res.json({ received: true });
     }
   } else {
     res.setHeader("Allow", "POST");
