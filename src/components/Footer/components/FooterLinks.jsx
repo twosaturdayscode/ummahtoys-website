@@ -18,47 +18,48 @@ export default function FooterLinks() {
           </div>
           <div className="flex flex-col gap-4">
             <span className="font-bold">
-              Link <br /> rapidi
+              Link rapidi
             </span>
-            <div className="font-light text-gray-400 flex flex-col gap-2">
+            <div className="font-light text-zinc-600 flex flex-col gap-2">
               <Link href={"/"}>
-                <a>Home</a>
+                <a className="hover:underline">Home</a>
               </Link>
-              <Link href={"/"}>
-                <a>Chi Siamo</a>
+              <Link href={"/chi-siamo"}>
+                <a className="hover:underline">Chi Siamo</a>
               </Link>
-              <Link href={"/"}>
-                <a>Shop</a>
+              <Link href={"/store"}>
+                <a className="hover:underline">Shop</a>
               </Link>
             </div>
           </div>
           <div className="flex flex-col gap-4">
             <span className="font-bold">Info</span>
-            <div className="font-light text-gray-400 flex flex-col gap-2">
-              <Link href={"/"}>
-                <a>Donazioni</a>
+            <div className="font-light text-zinc-600 flex flex-col gap-2">
+              <Link href={"/donazioni"}>
+                <a className="hover:underline">Donazioni</a>
               </Link>
-              <Link href={"/"}>
-                <a>Contatti</a>
+              <Link href={"/contatti"}>
+                <a className="hover:underline">Contatti</a>
               </Link>
-              <Link href={"/"}>
-                <a>Termini di reso</a>
+              <Link href={"/termini-di-reso"}>
+                <a className="hover:underline">Termini di reso</a>
               </Link>
-              <Link href={"/"}>
-                <a>Termini di servizio</a>
+              <Link href={"/termini-di-servizio"}>
+                <a className="hover:underline">Termini di servizio</a>
               </Link>
-              <Link href={"/"}>
-                <a>Privacy</a>
+              <Link href={"/privacy"}>
+                <a className="hover:underline">Privacy</a>
               </Link>
             </div>
           </div>
         </div>
         <div className="flex flex-col w-full md:w-1/2 gap-4">
           <span className="font-bold">La nostra mission</span>
-          <div className="font-light text-gray-400 flex flex-col gap-2">
+          <div className="font-light text-zinc-700 flex flex-col gap-2">
             <p>
-              Quality materials, good designs, craftsmanship and sustainability.
-              Quality materials, good designs, craftsmanship and sustainability.
+              Vogliamo dare dignità ad ogni bambino musulmano in Italia,
+              mettendo a disposizioni delle famiglie musulmane i migliori
+              strumenti per l&apos;educazione dei propri figli.
             </p>
           </div>
         </div>

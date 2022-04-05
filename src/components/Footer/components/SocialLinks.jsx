@@ -3,8 +3,8 @@ import Link from "next/link";
 export default function SocialLinks() {
   return (
     <div className="flex flex-row gap-5 justify-center items-center w-full h-20 text-slate-700">
-      <Link href={"/"} passHref>
-        <a className="w-5 h-5">
+      <Link href={"https://www.tiktok/@ummahtoys"} passHref>
+        <a className="w-5 h-5" title="Tiktok" target={"_blank"}>
           <svg
             viewBox="0 0 45 45"
             fill="inherit"
@@ -18,8 +18,8 @@ export default function SocialLinks() {
           </svg>
         </a>
       </Link>
-      <Link href={"/"} passHref>
-        <a className="w-5 h-5">
+      <Link href={"https://www.facebook.com/UmmahToys"} passHref>
+        <a className="w-5 h-5" title="Facebook" target={"_blank"}>
           <svg
             viewBox="0 0 45 45"
             fill="inherit"
@@ -32,8 +32,8 @@ export default function SocialLinks() {
           </svg>
         </a>
       </Link>
-      <Link href={"/"} passHref>
-        <a className="w-5 h-5">
+      <Link href={"https://www.instagram.com/ummahtoys/"}>
+        <a className="w-5 h-5" title="Instagram" target={"_blank"}>
           <svg
             viewBox="0 0 45 45"
             fill="inherit"

@@ -8,7 +8,7 @@ export default function Footer() {
     <>
       <FooterLinks />
       <section className="flex flex-col gap-5 justify-center items-center md:flex-row md:justify-between md:items-start w-3/4 mx-auto mt-8">
-        <Newsletter />
+        {/* <Newsletter /> */}
         <Socials />
       </section>
       <div className="w-full border-t-[0.5px] p-5 flex flex-col gap-3 items-center mt-8 mb-14 md:mb-0">
