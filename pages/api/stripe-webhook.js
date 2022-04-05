@@ -8,7 +8,7 @@ const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET;
 
 export default async function stripeWebhook(req, res) {
   if (req.method === "POST") {
-    const sig = request.headers["stripe-signature"];
+    const sig = req.headers["stripe-signature"];
     let stripeEvent;
 
     try {
@@ -41,7 +41,7 @@ export default async function stripeWebhook(req, res) {
         await updateWooOrder(session.metadata.orderId, { status: "failed" });
         console.error("Update order error", error);
       }
-      
+
       res.json({ received: true });
     }
   } else {
