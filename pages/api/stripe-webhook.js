@@ -1,19 +1,20 @@
 import Stripe from "stripe";
 import { updateWooOrder } from "../../src/api";
 
-const stripe = new Stripe(process.env.STRIPE_SK, {
-  apiVersion: "2020-08-27",
-});
-const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET;
-
 // NOTE: See https://www.codedaily.io/tutorials/Stripe-Webhook-Verification-with-NextJS
-export const config = {
+/* export const config = {
   api: {
     bodyParser: false,
   },
-};
+}; */
 
 export default async function stripeWebhook(req, res) {
+  const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET;
+
+  const stripe = new Stripe(process.env.STRIPE_SK, {
+    apiVersion: "2020-08-27",
+  });
+  
   if (req.method === "POST") {
     const sig = req.headers["stripe-signature"];
     let stripeEvent;
