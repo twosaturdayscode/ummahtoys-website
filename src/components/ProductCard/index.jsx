@@ -24,7 +24,7 @@ export default function ProductCard({ product }) {
             {product.categories[0].name}
           </h3>
         )}
-        <Link href={`/store/${product.id}`}>
+        <Link href={`/store/${product.slug}`}>
           <a className="hover:underline group-hover:underline">
             <h2 className="text-gray-900">{product.name}</h2>
           </a>
