@@ -107,6 +107,19 @@ export const prepareStripe = (order) => {
     line_items: lineItems,
     payment_method_types: ["card"],
     mode: "payment",
+    metadata: {
+      orderId: order.id,
+    },
+    shipping_options: [
+      {
+        name: "Strandard Express",
+        type: "fixed_amount",
+        fixed_amount: {
+          amount: 699,
+          currency: "eur",
+        },
+      },
+    ],
   };
 
   return sessionData;

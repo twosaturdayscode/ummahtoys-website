@@ -1,9 +1,8 @@
 import Stripe from "stripe";
+import { updateWooOrder } from "../../src/api";
 
 const stripe = new Stripe(process.env.STRIPE_SK);
 const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET;
-
-const updateWooOrder = async (status, orderId) => {};
 
 export default async function stripeWebhook(req, res) {
   if (req.method === "POST") {
@@ -28,13 +27,19 @@ export default async function stripeWebhook(req, res) {
         session.metadata.orderId,
         session.id
       );
+
+      const orderUpdates = {
+        set_paid: true,
+        transaction_id: session.id,
+      };
       // Payment Success.
-      /* try {
-        await updateOrder("processing", session.metadata.orderId, session.id);
+      try {
+        await updateWooOrder(session.metadata.orderId, orderUpdates);
       } catch (error) {
-        await updateOrder("failed", session.metadata.orderId);
+        await updateWooOrder(session.metadata.orderId, { status: "failed" });
         console.error("Update order error", error);
-      } */
+      }
+      res.status(200).send();
     }
   } else {
     res.setHeader("Allow", "POST");

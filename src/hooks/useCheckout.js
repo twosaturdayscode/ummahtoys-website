@@ -82,6 +82,8 @@ const useCheckout = () => {
             process.env.NEXT_PUBLIC_STRIPE_PK || ""
           );
           if (stripe) {
+            clearCart();
+            clearCartFromStorage();
             return stripe.redirectToCheckout({ sessionId: stripeSession.id });
           }
         } catch (error) {
@@ -90,6 +92,9 @@ const useCheckout = () => {
           setIsError(true);
         }
       }
+
+      clearCart();
+      clearCartFromStorage();
     } catch (error) {
       console.error(error);
       setIsLoading(false);

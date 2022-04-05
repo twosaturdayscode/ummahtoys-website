@@ -56,3 +56,7 @@ export async function createNextOrder(data) {
   });
   return await response.json();
 }
+
+export async function updateWooOrder(id, data) {
+  return await wooPost(`/orders/${id}`, data);
+}
