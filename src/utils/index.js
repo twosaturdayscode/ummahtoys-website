@@ -112,11 +112,24 @@ export const prepareStripe = (order) => {
     },
     shipping_options: [
       {
-        name: "Strandard Express",
-        type: "fixed_amount",
-        fixed_amount: {
-          amount: 699,
-          currency: "eur",
+        shipping_rate_data: {
+          type: "fixed_amount",
+          fixed_amount: {
+            amount: 599,
+            currency: "eur",
+          },
+          display_name: "Standard Express",
+          // Delivers in exactly 1 business day
+          delivery_estimate: {
+            minimum: {
+              unit: "business_day",
+              value: 1,
+            },
+            maximum: {
+              unit: "business_day",
+              value: 2,
+            },
+          },
         },
       },
     ],
