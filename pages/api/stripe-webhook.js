@@ -19,11 +19,7 @@ export default async function stripeWebhook(req, res) {
     let stripeEvent;
 
     try {
-      stripeEvent = stripe.webhooks.constructEvent(
-        req.body,
-        sig,
-        endpointSecret
-      );
+      stripeEvent = stripe.webhooks.constructEvent(req, sig, endpointSecret);
     } catch (error) {
       res.status(400).send(`Webhook Error: ${error.message}`);
     }
