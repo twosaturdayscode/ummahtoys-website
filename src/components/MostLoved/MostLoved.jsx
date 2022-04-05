@@ -18,7 +18,7 @@ export default function MostLoved({ products }) {
         </p>
       </div>
       <div className="w-full grid grid-cols-1 md:grid-cols-5 md:grid-rows-2 grid-flow-row gap-3 sm:px-20 md:px-0">
-        <Link href={`/store/${lovedProductsOnly[0].id}`} passHref>
+        <Link href={`/store/${lovedProductsOnly[0].slug}`} passHref>
           <article className="md:col-span-3 md:row-span-full shadow-sm rounded relative  w-full cursor-pointer">
             <div className="relative w-full h-full rounded">
               <Image
@@ -38,7 +38,7 @@ export default function MostLoved({ products }) {
             </div>
           </article>
         </Link>
-        <Link href={`/store/${lovedProductsOnly[1].id}`} passHref>
+        <Link href={`/store/${lovedProductsOnly[1].slug}`} passHref>
           <article className="md:col-span-2 shadow-sm relative h-full w-full cursor-pointer">
             <div className="w-full h-full rounded">
               <Image
