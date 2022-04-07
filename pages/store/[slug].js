@@ -107,7 +107,7 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: false,
+    fallback: 'blocking',
   };
 }
 
@@ -115,5 +115,5 @@ export async function getStaticProps(props) {
   const product = await getWooProductBySlug(props.params.slug);
   console.log(`Building slug: ${props.params.slug}`);
   // When products are fetched by slug woocommerce always returns an array with one element
-  return { props: product[0] };
+  return { props: product[0], revalidate: 1 };
 }
