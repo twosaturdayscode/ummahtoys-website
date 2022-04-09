@@ -3,14 +3,24 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { useCartContext } from "../../src/context";
-import { getWooProductBySlug, getWooProducts } from "../../src/api";
+import {
+  getWooProductById,
+  getWooProductBySlug,
+  getWooProducts,
+} from "../../src/api";
 
 import BackToButton from "../../src/components/BackToButton";
 import QuantitySelect from "../../src/components/QuantitySelect";
 
-export default function ProductPage(product) {
+export default function ProductPage({ product, variations }) {
   const { addItemToCart } = useCartContext();
-  const [currentImage, setCurrentImage] = useState(product?.images[0]);
+
+  const isVariant = variations.length !== 0;
+
+  const [variationProduct, setVariationProduct] = useState(
+    isVariant ? variations[0] : null
+  );
+  const [currentImage, setCurrentImage] = useState(product.images[0]);
 
   const [quantity, setQuantity] = useState(1);
 
@@ -112,8 +122,22 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(props) {
-  const product = await getWooProductBySlug(props.params.slug);
   console.log(`Building slug: ${props.params.slug}`);
+  const [product] = await getWooProductBySlug(props.params.slug);
+  if (product.variations.length !== 0) {
+    const variations = await Promise.all(
+      product.variations.map(async (variationId) => {
+        return await getWooProductById(variationId);
+      })
+    );
+
+    return {
+      props: {
+        product,
+        variations,
+      },
+    };
+  }
   // When products are fetched by slug woocommerce always returns an array with one element
-  return { props: product[0] };
+  return { props: { product, variations: [] } };
 }
