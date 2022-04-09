@@ -30,7 +30,7 @@ export default function ProductCard({ product }) {
           </a>
         </Link>
         <p className="mt-1 text-lg font-light tracking-wide">
-          €{product.regular_price}
+          €{product.price}
         </p>
       </div>
     </article>
