@@ -16,13 +16,13 @@ export default function Hero() {
         <div className="w-full flex flex-row items-center justify-center md:justify-start gap-0 text-sm lg:text-base">
           <Link href="/store" passHref>
             <a className="py-4 px-4 md:py-5 md:px-6 h-5 flex flex-row gap-1 justify-center items-center border-2 border-gray-800 rounded-md hover:bg-gray-800 hover:text-white transition">
-              <span className="text-xs sm:text-base">Val al negozio</span>
+              <span className="text-xs lg:text-lg">Val al negozio</span>
               <HiChevronRight className="w-4 h-4" />
             </a>
           </Link>
           <Link href="/chi-siamo" passHref>
             <a className="py-4 px-4 md:py-5 md:px-6 h-5 flex flex-row gap-1 justify-center items-center rounded-md hover:underline transition">
-              <span className="text-xs sm:text-base">Scopri chi siamo</span>
+              <span className="text-xs lg:text-lg">Scopri chi siamo</span>
               <HiChevronRight className="w-4 h-4" />
             </a>
           </Link>
