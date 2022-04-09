@@ -32,17 +32,19 @@ export default function ProductPage(product) {
             height={100}
           />
         </div>
-        <div className="w-full flex flex-row items-center gap-10 px-16 sm:px-28 md:px-40 lg:px-36 xl:px-64">
+        <div className="w-full flex flex-row items-center justify-center gap-10 px-16">
           {product.images.map((image) => (
             <div
               key={image.id}
-              className={`w-full relative cursor-pointer ${
-                image.id !== currentImage.id ? "opacity-50" : ""
+              className={`w-1/3 sm:w-1/4 md:w-1/5 rounded-lg relative cursor-pointer transition ${
+                image.id !== currentImage.id
+                  ? "opacity-50  hover:opacity-70"
+                  : "ring-4 ring-indigo-400"
               }`}
               onClick={() => setCurrentImage(image)}
             >
               <Image
-                className="object-cover object-center w-full block"
+                className="object-cover object-center block rounded-lg"
                 src={image.src}
                 alt={image.alt}
                 layout={"responsive"}
