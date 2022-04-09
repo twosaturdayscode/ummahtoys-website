@@ -66,13 +66,13 @@ export default function Cart() {
             </div>
             <div className="w-full flex flex-row-reverse items-center gap-5 py-5">
               <button
-                className={`w-64 h-16 flex justify-center items-center bg-zinc-700 text-white cursor-pointer focus:ring-4 focus:ring-zinc-300 focus:rounded active:bg-zinc-600 ${
+                className={`w-64 h-16 px-5 flex justify-center items-center bg-zinc-700 text-white cursor-pointer focus:ring-4 focus:ring-zinc-300 focus:rounded active:bg-zinc-600 ${
                   isCartEmpty() ? "bg-zinc-400 cursor-not-allowed" : ""
                 }`}
                 disabled={isCartEmpty()}
                 onClick={() => router.push("/checkout")}
               >
-                Procedi con il pagamento
+                Procedi al checkout
               </button>
               <Link href={"/store"}>
                 <a className="underline">Torna al negozio</a>

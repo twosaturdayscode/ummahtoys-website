@@ -28,12 +28,12 @@ export default function Checkout() {
     {
       value: "spedizione",
       text: "Spedizione",
-      icon: <BsTruck className="w-5 h-5 text-gray-500" />,
+      icon: <BsTruck className="w-5 h-5 peer-checked:text-indigo-500 text-gray-500" />,
     },
     {
       value: "ritiro",
       text: "Ritiro",
-      icon: <BsShop className="w-5 h-5 text-gray-500" />,
+      icon: <BsShop className="w-5 h-5 peer-checked:text-indigo-500 text-gray-500" />,
     },
   ];
 
@@ -111,7 +111,7 @@ export default function Checkout() {
     <main className="grid grid-cols-12 grid-flow-row w-full my-10 mb-16 gap-8">
       <BackToButton label={"Tornal al carrello"} href={"/cart"} />
       <h1 className="col-span-full col-start-2 col-end-12 text-5xl text-zinc-700 font-[CeraPro] text-center md:text-left">
-        Pagamento
+        Checkout
       </h1>
       <section className="col-span-full col-start-2 col-end-12 my-5">
         <form
@@ -268,15 +268,15 @@ export default function Checkout() {
                 </div>
               </div>
               <div className="w-full flex items-center justify-center gap-5 py-5">
-                <button
-                  type="submit"
-                  className="w-64 h-16 flex justify-center items-center bg-zinc-700 text-white cursor-pointer focus:ring-4 focus:ring-zinc-300 focus:rounded active:bg-zinc-600"
-                >
-                  Procedi con il pagamento
-                </button>
                 <Link href={"/cart"}>
                   <a className="underline">Torna al carrello</a>
                 </Link>
+                <button
+                  type="submit"
+                  className="w-64 h-16 px-5 font-normal flex justify-center items-center bg-zinc-700 text-white cursor-pointer focus:ring-4 focus:ring-zinc-300 focus:rounded active:bg-zinc-600"
+                >
+                  Acquista!
+                </button>
               </div>
             </FormSection>
           </div>
