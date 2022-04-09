@@ -17,15 +17,21 @@ export default function ProductPage({ product, variations }) {
 
   const isVariant = variations.length !== 0;
 
-  const [variationProduct, setVariationProduct] = useState(
-    isVariant ? variations[0] : null
+  const [currentProduct, setCurrentProduct] = useState(
+    isVariant ? variations[0] : product
   );
-  const [currentImage, setCurrentImage] = useState(product.images[0]);
+
+  const [currentImage, setCurrentImage] = useState(currentProduct.images[0]);
 
   const [quantity, setQuantity] = useState(1);
 
+  function handleVarProductChange(varProduct) {
+    setCurrentProduct(varProduct);
+    setCurrentImage(varProduct.images[0]);
+  }
+
   function handleAddToCart() {
-    addItemToCart(product, quantity);
+    addItemToCart(currentProduct, quantity);
   }
 
   return (
@@ -43,7 +49,7 @@ export default function ProductPage({ product, variations }) {
           />
         </div>
         <div className="w-full flex flex-row items-center justify-center gap-10 px-16">
-          {product.images.map((image) => (
+          {currentProduct.images.map((image) => (
             <div
               key={image.id}
               className={`w-1/3 sm:w-1/4 md:w-1/5 rounded-lg relative cursor-pointer transition ${
@@ -68,15 +74,35 @@ export default function ProductPage({ product, variations }) {
       <div className="w-full lg:col-start-8 lg:col-end-12 flex flex-col gap-8 text-zinc-800">
         <div className="flex flex-col gap-2">
           <div className="flex flex-row gap-4 uppercase text-gray-400 text-sm">
-            {product.categories.map((category) => (
+            {currentProduct.categories.map((category) => (
               <span key={category.id}>{category.name}</span>
             ))}
           </div>
           <h1 className="text-3xl font-[CeraPro] font-bold mb-2">
-            {product.name}
+            {currentProduct.name}
           </h1>
-          <span className="text-2xl">€{product.price}</span>
+          <span className="text-2xl">€{currentProduct.price}</span>
         </div>
+        {isVariant && (
+          <div className="flex flex-col gap-2">
+            <h2 className="text-2xl font-semibold">Modello</h2>
+            <div className="flex gap-3">
+              {variations.map((varProduct) => (
+                <button
+                  key={varProduct.id}
+                  className={`py-1 px-3 border rounded-md text-sm transition ${
+                    varProduct.id === currentProduct.id
+                      ? "ring-4 ring-indigo-500"
+                      : "hover:ring-2 hover:ring-indigo-100"
+                  }`}
+                  onClick={() => handleVarProductChange(varProduct)}
+                >
+                  {varProduct.attributes[0].option}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
         <div className="flex flex-col gap-2">
           <h2 className="text-2xl font-semibold">Descrizione</h2>
           <div
