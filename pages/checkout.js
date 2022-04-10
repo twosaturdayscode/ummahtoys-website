@@ -10,6 +10,7 @@ import {
   FormRadio,
   FormSelectProvincia,
   FormRadioWithAccordion,
+  PickupRadio,
 } from "../src/components/Checkout/FormComponents";
 
 import useCheckout from "../src/hooks/useCheckout";
@@ -28,12 +29,37 @@ export default function Checkout() {
     {
       value: "spedizione",
       text: "Spedizione",
-      icon: <BsTruck className="w-5 h-5 peer-checked:text-indigo-500 text-gray-500" />,
+      icon: (
+        <BsTruck className="w-5 h-5 peer-checked:text-indigo-500 text-gray-500" />
+      ),
     },
     {
       value: "ritiro",
       text: "Ritiro",
-      icon: <BsShop className="w-5 h-5 peer-checked:text-indigo-500 text-gray-500" />,
+      icon: (
+        <BsShop className="w-5 h-5 peer-checked:text-indigo-500 text-gray-500" />
+      ),
+    },
+  ];
+
+  const pickupOptions = [
+    {
+      name: "Milano",
+      value: "milano",
+      price: "Gratis",
+      location: "Milano, MI, Lombardia, Italia",
+    },
+    {
+      name: "Monza",
+      value: "monza",
+      price: "Gratis",
+      location: "Monza, MB, Lombardia, Italia",
+    },
+    {
+      name: "Bergamo",
+      value: "bergamo",
+      price: "Gratis",
+      location: "Bergamo, BG, Lombardia, Italia",
     },
   ];
 
@@ -74,6 +100,7 @@ export default function Checkout() {
       postalCode: "",
       phone: "",
       paymentMethod: "stripe",
+      pickupMethod: "milano",
     },
   });
   const watchShippingMethod = watch("shippingMethod");
@@ -131,6 +158,18 @@ export default function Checkout() {
                 }}
                 errorMessage={"Perfavore inserisci una email valida."}
               />
+              {watchShippingMethod === "ritiro" && (
+                <FormInput
+                  type="tel"
+                  name={"phone"}
+                  control={control}
+                  placeholder={"Cellulare"}
+                  rules={{ required: true }}
+                  errorMessage={
+                    "Ci servirà a contattarti per qualsiasi evenienza"
+                  }
+                />
+              )}
             </FormSection>
             <FormSection title={"Metodo di consegna"}>
               <FormRadio
@@ -219,16 +258,12 @@ export default function Checkout() {
             {/* NOTE: IF THE SHIPPING OPTION IS WITHDRAW */}
             {watchShippingMethod === "ritiro" && (
               <FormSection title={"Luogo di ritiro"}>
-                <div className="border-2 border-indigo-500 rounded p-3 px-6 text-zinc-700 flex flex-col gap-1">
-                  <div className="flex justify-between items-center">
-                    <span>Ovunque a Milano</span>
-                    <span>Gratis</span>
-                  </div>
-                  <div className="flex justify-between items-center text-xs text-zinc-500">
-                    <span>Milano, MI, Lombardia, Italia</span>
-                    <span>Di solito pronto in 24h</span>
-                  </div>
-                </div>
+                <PickupRadio
+                  name={"pickupName"}
+                  control={control}
+                  options={pickupOptions}
+                  defaultValue={"milano"}
+                />
               </FormSection>
             )}
           </div>

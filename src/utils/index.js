@@ -56,13 +56,25 @@ export const prepareWooOrder = (cart, userData) => {
     phone: userData.phone,
   };
 
-  const shippingLines = [
-    {
+  // NOTE: If pickup we return the location selected by user, otherwise we return the standard "spedizione"
+  const setShippingMethod = () => {
+    if (userData.shippingMethod === "ritiro") {
+      return {
+        method_title: "Ritiro a" + userData.pickupMethod.name,
+        method_id: 1,
+        total: userData.pickupMethod.price,
+      };
+    }
+
+    return {
       method_title: userData.shippingMethod,
       method_id: 1,
-      total: userData.shippingMethod === "ritiro" ? "0" : "5.99",
-    },
-  ];
+      total: "5.99",
+    };
+  };
+
+  // NOTE: Shipping lines must be an array and represent the user shipping method
+  const shippingLines = [setShippingMethod()];
 
   const feeLines = [
     {
