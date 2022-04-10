@@ -202,7 +202,7 @@ export const PickupRadio = ({ name, control, options, defaultValue }) => {
           <input
             {...field}
             name={name}
-            value={option.value}
+            value={option}
             defaultChecked={defaultValue === option.value}
             type={"radio"}
             className="hidden peer"
@@ -210,7 +210,7 @@ export const PickupRadio = ({ name, control, options, defaultValue }) => {
           <div className="w-full h-full border-2 peer-checked:border-indigo-500 peer-checked:text-indigo-500 rounded p-3 px-6 text-zinc-700 flex flex-col gap-1 select-none transition">
             <div className="flex justify-between items-center">
               <span>Ritiro a {option.name}</span>
-              <span>{option.price}</span>
+              <span>{option.price === "0" ? "Gratis" : option.price}</span>
             </div>
             <div className="flex justify-between items-center text-xs text-zinc-500">
               <span>{option.location}</span>

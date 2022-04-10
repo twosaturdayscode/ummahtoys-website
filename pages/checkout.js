@@ -46,19 +46,19 @@ export default function Checkout() {
     {
       name: "Milano",
       value: "milano",
-      price: "Gratis",
+      price: "0",
       location: "Milano, MI, Lombardia, Italia",
     },
     {
       name: "Monza",
       value: "monza",
-      price: "Gratis",
+      price: "0",
       location: "Monza, MB, Lombardia, Italia",
     },
     {
       name: "Bergamo",
       value: "bergamo",
-      price: "Gratis",
+      price: "0",
       location: "Bergamo, BG, Lombardia, Italia",
     },
   ];
