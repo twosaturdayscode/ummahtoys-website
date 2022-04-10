@@ -164,8 +164,9 @@ export async function getStaticProps(props) {
         product,
         variations,
       },
+      revalidate: 10,
     };
   }
   // When products are fetched by slug woocommerce always returns an array with one element
-  return { props: { product, variations: [] } };
+  return { props: { product, variations: [] }, revalidate: 10 };
 }
