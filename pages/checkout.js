@@ -100,14 +100,15 @@ export default function Checkout() {
       postalCode: "",
       phone: "",
       paymentMethod: "stripe",
-      pickupMethod: "milano",
+      pickupMethod: pickupOptions[0],
     },
   });
   const watchShippingMethod = watch("shippingMethod");
   const watchPaymentMethod = watch("paymentMethod");
 
   const onSubmit = (data) => {
-    createOrder(cart, data);
+    // createOrder(cart, data);
+    console.log(data);
   };
 
   if (isLoading) {
@@ -259,7 +260,7 @@ export default function Checkout() {
             {watchShippingMethod === "ritiro" && (
               <FormSection title={"Luogo di ritiro"}>
                 <PickupRadio
-                  name={"pickupName"}
+                  name={"pickupMethod"}
                   control={control}
                   options={pickupOptions}
                   defaultValue={"milano"}
