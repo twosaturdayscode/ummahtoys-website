@@ -107,8 +107,7 @@ export default function Checkout() {
   const watchPaymentMethod = watch("paymentMethod");
 
   const onSubmit = (data) => {
-    // createOrder(cart, data);
-    console.log(data);
+    createOrder(cart, data);
   };
 
   if (isLoading) {
