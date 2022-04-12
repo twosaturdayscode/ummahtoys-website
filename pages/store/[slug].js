@@ -112,16 +112,25 @@ export default function ProductPage({ product, variations }) {
         </div>
         <div className="flex flex-col gap-2">
           <h2 className="text-2xl font-semibold">Quantità</h2>
-          <div className=" w-40 h-12">
-            <QuantitySelect
-              handleChange={(quantity) => setQuantity(quantity)}
-            />
+          <div className="w-40 h-12">
+            {product.stock_quantity <= 0 ? (
+              <div>
+                <span className="bg-red-500 text-xl text-white py-1 px-2 rounded-lg">
+                  Esaurito
+                </span>
+              </div>
+            ) : (
+              <QuantitySelect
+                handleChange={(quantity) => setQuantity(quantity)}
+              />
+            )}
           </div>
         </div>
         <div className="flex flex-col items-center gap-5 py-5">
           <button
-            className="w-64 h-16 flex justify-center items-center bg-zinc-800 text-white focus:ring-4 focus:ring-zinc-300 focus:rounded active:bg-zinc-600"
+            className="w-64 h-16 flex justify-center items-center bg-zinc-800 text-white focus:ring-4 focus:ring-zinc-300 focus:rounded active:bg-zinc-600 disabled:bg-zinc-400 disabled:cursor-not-allowed"
             onClick={handleAddToCart}
+            disabled={product.stock_quantity <= 0}
           >
             Aggiungi al carrello
           </button>
