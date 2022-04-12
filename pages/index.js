@@ -11,11 +11,19 @@ const Home = ({ products }) => {
     <div>
       <Head>
         <title>Home | Ummah Toys Shop</title>
-        <meta
-          name="Descrizione negozio online ummay toys shop per SEO"
-          content="Da fare per SEO"
-        />
         <link rel="icon" href="/favicon.ico" />
+        <link
+          rel="icon"
+          type="image/png"
+          href="favicon-32x32.png"
+          sizes="32x32"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          href="favicon-16x16.png"
+          sizes="16x16"
+        />
       </Head>
       <Hero />
       <Featured products={products} />

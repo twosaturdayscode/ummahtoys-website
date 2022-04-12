@@ -13,6 +13,19 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
+        <meta
+          name="description"
+          content="Primo negozio online in Italia di giochi islamici - Ummay Toys"
+        />
+        <meta
+          name="keywords"
+          content="giochi, islam, musulmano, muslim, bambini, bambini musulmani, giochi islamici, giochi musulmani"
+        />
+        <meta name="author" content="Ummah Toys" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0"
+        ></meta>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
