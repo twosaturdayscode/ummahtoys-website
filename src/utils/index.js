@@ -60,9 +60,9 @@ export const prepareWooOrder = (cart, userData) => {
   const setShippingMethod = () => {
     if (userData.shippingMethod === "ritiro") {
       return {
-        method_title: "Ritiro a " + userData.pickupMethod.name,
+        method_title: "Ritiro a " + userData.pickupMethod,
         method_id: 1,
-        total: userData.pickupMethod.price,
+        total: "0",
       };
     }
 

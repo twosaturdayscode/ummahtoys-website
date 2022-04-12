@@ -202,7 +202,7 @@ export const PickupRadio = ({ name, control, options, defaultValue }) => {
           <input
             {...field}
             name={name}
-            value={{ ...option }}
+            value={option.value}
             defaultChecked={defaultValue === option.value}
             type={"radio"}
             className="hidden peer"

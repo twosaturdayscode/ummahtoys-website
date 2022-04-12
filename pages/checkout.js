@@ -46,19 +46,16 @@ export default function Checkout() {
     {
       name: "Milano",
       value: "milano",
-      price: "0",
       location: "Milano, MI, Lombardia, Italia",
     },
     {
       name: "Monza",
       value: "monza",
-      price: "0",
       location: "Monza, MB, Lombardia, Italia",
     },
     {
       name: "Bergamo",
       value: "bergamo",
-      price: "0",
       location: "Bergamo, BG, Lombardia, Italia",
     },
   ];
@@ -100,7 +97,7 @@ export default function Checkout() {
       postalCode: "",
       phone: "",
       paymentMethod: "stripe",
-      pickupMethod: pickupOptions[0],
+      pickupMethod: pickupOptions[0].value,
     },
   });
   const watchShippingMethod = watch("shippingMethod");
@@ -158,18 +155,16 @@ export default function Checkout() {
                 }}
                 errorMessage={"Perfavore inserisci una email valida."}
               />
-              {watchShippingMethod === "ritiro" && (
-                <FormInput
-                  type="tel"
-                  name={"phone"}
-                  control={control}
-                  placeholder={"Cellulare"}
-                  rules={{ required: true }}
-                  errorMessage={
-                    "Ci servirà a contattarti per qualsiasi evenienza"
-                  }
-                />
-              )}
+              <FormInput
+                type="tel"
+                name={"phone"}
+                control={control}
+                placeholder={"Cellulare"}
+                rules={{ required: true }}
+                errorMessage={
+                  "Ci servirà a contattarti per qualsiasi evenienza"
+                }
+              />
             </FormSection>
             <FormSection title={"Metodo di consegna"}>
               <FormRadio
@@ -240,16 +235,6 @@ export default function Checkout() {
                       errorMessage={"Hai dimenticato il CAP"}
                     />
                   </FormField>
-                  <FormInput
-                    type="tel"
-                    name={"phone"}
-                    control={control}
-                    placeholder={"Cellulare"}
-                    rules={{ required: true }}
-                    errorMessage={
-                      "Ci servirà a contattarti per qualsiasi evenienza"
-                    }
-                  />
                 </FormSection>
                 <FormSection title={"Metodo di pagamento"}>
                   <FormRadioWithAccordion
