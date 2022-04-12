@@ -103,9 +103,10 @@ export const FormRadioWithAccordion = ({
                 value={option.value}
                 defaultChecked={defaultValue === option.value}
                 type={"radio"}
+                disabled={option.disabled}
                 className="focus:ring-indigo-500 focus:ring-2 checked:text-indigo-500 peer"
               />
-              <span className="w-full peer-checked:text-indigo-500">
+              <span className="w-full peer-checked:text-indigo-500 peer-disabled:text-gray-400">
                 {option.text}
               </span>
               <div className="flex items-center justify-end gap-2">

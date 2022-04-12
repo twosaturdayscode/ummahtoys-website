@@ -71,7 +71,8 @@ export default function Checkout() {
     {
       id: 1,
       value: "paypal",
-      text: "Paypal",
+      disabled: true,
+      text: "Paypal (presto in arrivo!)",
       icons: [<PayPalIcon key={0} />],
       body: "Una volta cliccato 'Acquista' verrai reindirizzato alla pagina di Paypal, dove potrai effettuare il login e procedere con il pagamento.",
     },
