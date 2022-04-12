@@ -212,11 +212,18 @@ export default function Checkout() {
                     control={control}
                   />
                   <FormField>
-                    <FormSelectProvincia
+                    {/* <FormSelectProvincia
                       name={"state"}
                       control={control}
                       errorMessage="Seleziona una provincia"
                       rules={{ required: true, minLength: 1 }}
+                    /> */}
+                    <FormInput
+                      placeholder="Provincia"
+                      name={"state"}
+                      control={control}
+                      rules={{ required: true }}
+                      errorMessage={"Hai dimenticato la provincia"}
                     />
                     <FormInput
                       placeholder="Città"
