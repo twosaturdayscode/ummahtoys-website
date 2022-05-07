@@ -7,13 +7,14 @@ I loved working on this project because I had the opportunity to build it from t
 TODO:
 - [x] Feedback aggiunta carrello
 - [x] Assicurarsi che prima immagine nell'array di immagini sia quella principale
-- [ ] Gestire lo stock sul FE
+- [x] Gestire lo stock sul FE
 - [x] Sistema links del footer e dei social
 - [ ] Aggiungi note cliente sull'ordine (customer_note)
 - [ ] Aggiungi recensioni prodotti
 - [x] Fare redirect www
 - [ ] Crea pagine del footer
 - [ ] Crea pagina chi siamo
-- [ ] Sistemare templates email
+- [x] Sistemare templates email
 - [x] Sistemare look mobile
-- [ ] Sistemare selezione provincia in checkout
+- [x] Sistemare selezione provincia in checkout
+- [ ] Migliorare campi input facendo salire la label quando focused
