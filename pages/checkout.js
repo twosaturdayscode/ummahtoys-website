@@ -203,9 +203,11 @@ export default function Checkout() {
                     errorMessage={"Hai dimenticato il tuo indirizzo"}
                   />
                   <FormInput
-                    placeholder="Scala, edificio, altre info utili, ecc. (opzionale)"
+                    placeholder="Citofono, scala, edificio, altre info utili, ecc. (opzionale)"
                     name={"addressNotes"}
                     control={control}
+                    rules={{ required: true }}
+                    errorMessage={"Hai dimenticato i dettagli"}
                   />
                   <FormField>
                     {/* <FormSelectProvincia
