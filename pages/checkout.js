@@ -81,7 +81,7 @@ export default function Checkout() {
       value: "cod",
       text: "Pagamento alla consegna",
       icons: [],
-      body: "Il pagamento alla consegna prevede un supplemento da parte del corriere di €3.",
+      body: "Il pagamento alla consegna prevede un supplemento da parte del corriere di €3. La spedizione in contrassegno e’ una grande comodità per il cliente ma un grande rischio per noi. Ti chiediamo gentilmente di assicurarti di ritirare l’ordine e pagare il corriere. La mancata ricezione dell’ordine costerà a UmmahToys una multa di 15€.",
     },
   ];
 
