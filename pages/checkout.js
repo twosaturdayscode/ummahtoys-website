@@ -287,6 +287,12 @@ export default function Checkout() {
                   <span className="font-medium">€3</span>
                 </div>
               )}
+              {watchShippingMethod === "ritiro" && (
+                <div className="flex justify-between px-8 font-light text-zinc-500">
+                  <span>Commissione ritiro:</span>
+                  <span className="font-medium">€2</span>
+                </div>
+              )}
               <hr className="h-[0.5px]" />
               <div className="flex justify-between px-8 font-light my-4">
                 <span className="text-zinc-800 font-medium">Totale</span>

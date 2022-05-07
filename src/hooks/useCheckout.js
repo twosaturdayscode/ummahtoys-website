@@ -35,7 +35,7 @@ const useCheckout = () => {
   };
 
   const getTotal = (shipping, payment) => {
-    if (shipping === "ritiro") return getSubtotal().toFixed(2);
+    if (shipping === "ritiro") return (getSubtotal() + 2).toFixed(2);
     if (shipping === "spedizione" && payment === "cod")
       return (getSubtotal() + 5.99 + 3).toFixed(2);
 
