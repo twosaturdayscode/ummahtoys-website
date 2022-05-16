@@ -27,7 +27,7 @@ async function wooPost(endpoint, body) {
 }
 
 export async function getWooProducts() {
-  return await wooGet("/products?per_page=100");
+  return await wooGet("/products?per_page=100?status=published");
 }
 
 export async function getWooCategories() {
