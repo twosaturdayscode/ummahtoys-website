@@ -5,7 +5,7 @@ export default function Chisiamo() {
         <h1 className="col-span-full col-start-2 col-end-12 text-5xl text-zinc-700 font-[CeraPro] text-center md:text-left">
           Chi siamo
         </h1>
-        <p className="col-span-full col-start-2 col-end-12 text-xl font-light max-w-4xl mx-auto">
+        <p className="col-span-full col-start-2 col-end-12 font-light max-w-4xl mx-auto">
           Ummah Toys nasce nel Maggio 2021 con un obiettivo preciso:{" "}
           <strong>
             avvicinare i bambini musulmani alla religione in modo divertente,
