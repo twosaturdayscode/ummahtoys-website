@@ -17,9 +17,7 @@ export default function FooterLinks() {
             />
           </div>
           <div className="flex flex-col gap-4">
-            <span className="font-bold">
-              Link rapidi
-            </span>
+            <span className="font-bold">Link rapidi</span>
             <div className="font-light text-zinc-600 flex flex-col gap-2">
               <Link href={"/"}>
                 <a className="hover:underline">Home</a>
@@ -57,9 +55,9 @@ export default function FooterLinks() {
           <span className="font-bold">La nostra mission</span>
           <div className="font-light text-zinc-700 flex flex-col gap-2">
             <p>
-              Vogliamo dare dignità ad ogni bambino musulmano in Italia,
-              mettendo a disposizioni delle famiglie musulmane i migliori
-              strumenti per l&apos;educazione dei propri figli.
+              Vogliamo permettere ad ogni bambino musulmano in Italia, tramite i
+              nostri prodotti, di poter imparare l&apos;islam in maniera facile,
+              intuitiva e divertente. Una Ummah forte lo è dai primi passi.
             </p>
           </div>
         </div>
