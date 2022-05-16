@@ -413,8 +413,7 @@ export default function Termini() {
           <br />
           I presenti Termini di servizio e gli eventuali accordi separati in
           base ai quali forniamo i Servizi sono regolati e interpretati in
-          conformità con le leggi di Hijab Paradise di Kamal Idrissi Keltoum,
-          via del Borgo di San Pietro 132/E - 40126 Bologna (Italia).
+          conformità con le leggi di Ummah Toys di Mazen Hussein (inserire via)
           <br />
           <br />
           SEZIONE 19 - MODIFICHE AI TERMINI DEL SERVIZIO
