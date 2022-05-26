@@ -21,6 +21,7 @@ export default function ProductPage({ product, variations }) {
     isVariant ? variations[0] : product
   );
 
+  // TODO: Use placeholder when no image is fetched
   const [currentImage, setCurrentImage] = useState(currentProduct.images[0]);
 
   const [quantity, setQuantity] = useState(1);
@@ -40,7 +41,7 @@ export default function ProductPage({ product, variations }) {
       <div className="col-span-full lg:col-start-2 lg:col-end-8 flex flex-col w-full items-center mb-10">
         <div className="w-full relative py-5 px-10 sm:px-20 md:px-32 lg:px-28 xl:px-36">
           <Image
-            className="object-cover object-center w-full block"
+            className="object-contain object-center w-full block"
             src={currentImage.src}
             alt={currentImage.alt}
             layout={"responsive"}
@@ -86,7 +87,7 @@ export default function ProductPage({ product, variations }) {
         {isVariant && (
           <div className="flex flex-col gap-2">
             <h2 className="text-2xl font-semibold">Modello</h2>
-            <div className="flex gap-3">
+            <div className="flex flex-wrap gap-3">
               {variations.map((varProduct) => (
                 <button
                   key={varProduct.id}
