@@ -12,6 +12,8 @@ import {
 import BackToButton from "../../src/components/BackToButton";
 import QuantitySelect from "../../src/components/QuantitySelect";
 
+import Zoom from "react-medium-image-zoom";
+
 export default function ProductPage({ product, variations }) {
   const { addItemToCart } = useCartContext();
 
@@ -40,14 +42,18 @@ export default function ProductPage({ product, variations }) {
       <BackToButton label={"Torna al negozio"} href={"/store"} />
       <div className="col-span-full lg:col-start-2 lg:col-end-8 flex flex-col w-full items-center mb-10">
         <div className="w-full relative py-5 px-10 sm:px-20 md:px-32 lg:px-28 xl:px-36">
-          <Image
-            className="object-contain object-center w-full block"
-            src={currentImage.src}
-            alt={currentImage.alt}
-            layout={"responsive"}
-            width={100}
-            height={100}
-          />
+          <Zoom wrapStyle={{ minWidth: "100%" }}>
+            <div className=" min-w-full relative">
+              <Image
+                className="object-contain object-center w-full block"
+                src={currentImage.src}
+                alt={currentImage.alt}
+                layout={"responsive"}
+                width={100}
+                height={100}
+              />
+            </div>
+          </Zoom>
         </div>
         <div className="w-full flex flex-row items-center justify-center gap-10 px-16">
           {currentProduct.images.map((image) => (

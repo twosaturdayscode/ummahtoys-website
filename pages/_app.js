@@ -9,6 +9,10 @@ import CartContextProvider from "../src/context";
 import "../styles/globals.css";
 import "react-toastify/dist/ReactToastify.css";
 
+import 'react-medium-image-zoom/dist/styles.css'
+
+import NextNProgress from "nextjs-progressbar";
+
 function MyApp({ Component, pageProps }) {
   return (
     <>
@@ -38,6 +42,7 @@ function MyApp({ Component, pageProps }) {
           rel="stylesheet"
         />
       </Head>
+      <NextNProgress color="#38BDF8" height={6} />
       <CartContextProvider>
         <ToastContainer
           autoClose={4000}
