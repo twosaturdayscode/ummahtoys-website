@@ -44,9 +44,6 @@ export default function ProductPage({ product, variations }) {
       <BackToButton label={"Torna al negozio"} href={"/store"} />
       <div className="col-span-full lg:col-start-2 lg:col-end-8 flex flex-col w-full items-center mb-10">
         <div className="w-full relative py-5 px-10 sm:px-20 md:px-32 lg:px-28 xl:px-36">
-          <div className="absolute z-10 rounded-full p-2 bg-zinc-100">
-            <HiOutlineZoomIn className="w-4 h-4 text-zinc-400" />
-          </div>
           <Zoom wrapStyle={{ minWidth: "100%" }}>
             <div className=" min-w-full relative">
               <Image
