@@ -14,7 +14,7 @@ export default function Footer() {
       <div className="w-full border-t-[0.5px] p-5 flex flex-col gap-3 items-center mt-8 mb-14 md:mb-0">
         <PayServiceIcons />
         <span className="text-xs text-gray-400">
-          © {new Date().getFullYear()} - Ummah Toys. Fatto con amore per la comunità.
+          © {new Date().getFullYear()} - Ummah Toys. Fatto con amore per la comunità. P.IVA: 11570680964 - Denominazione: BEST OF ME DI MAZEN HUSSEIN
         </span>
       </div>
     </>

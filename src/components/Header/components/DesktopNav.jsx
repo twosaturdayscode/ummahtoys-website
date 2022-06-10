@@ -31,6 +31,7 @@ const DesktopNav = () => {
         <DesktopNavLink href={"/"}>Home</DesktopNavLink>
         <DesktopNavLink href={"/store"}>Store</DesktopNavLink>
         <DesktopNavLink href={"/chi-siamo"}>Chi siamo</DesktopNavLink>
+        <DesktopNavLink href={"/contatti"}>Contatti</DesktopNavLink>
       </div>
       <div className="hidden md:flex flex-row items-center justify-self-end col-start-10 col-span-2">
         <MobileNavLink href={"/cart"}>
