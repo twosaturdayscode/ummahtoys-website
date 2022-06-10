@@ -1,8 +1,25 @@
 import Image from "next/image";
+import Head from "next/head";
 
 export default function Chisiamo() {
   return (
     <>
+    <Head>
+        <title>Chi siamo | Ummah Toys Shop</title>
+        <link rel="icon" href="/favicon.ico" />
+        <link
+          rel="icon"
+          type="image/png"
+          href="favicon-32x32.png"
+          sizes="32x32"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          href="favicon-16x16.png"
+          sizes="16x16"
+        />
+      </Head>
       <main className="grid grid-cols-1 sm:grid-cols-12 grid-flow-row w-full my-10 mb-16 gap-10">
         <h1 className="col-span-full sm:col-start-2 sm:col-end-12 text-5xl text-zinc-700 font-[CeraPro] text-center md:text-left">
           Chi siamo
